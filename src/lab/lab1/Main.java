@@ -23,12 +23,16 @@ public class Main { //tworze maina w klasie XD
                     System.out.println("You've choosen square.");
                     System.out.println("Type side length: ");
                     double b = scanner.nextDouble();
-                    figure = new Square(b);
-                    ((Square) figure).print();
-                    System.out.println("Type prisms height: ");
-                    prismHeight = scanner.nextDouble();
-                    prism = new Prism(figure, prismHeight);
-                    prism.print();
+                    try {
+                        figure = new Square(b);
+                        ((Square) figure).print();
+                        System.out.println("Type prisms height: ");
+                        prismHeight = scanner.nextDouble();
+                        prism = new Prism(figure, prismHeight);
+                        prism.print();
+                    } catch (Exception ex) {
+                        System.out.println(ex.getMessage());
+                    }
                     break;
                 case 2:
                     System.out.println("You've choosen triangle.");
@@ -51,12 +55,16 @@ public class Main { //tworze maina w klasie XD
                     System.out.println("You've choosen circle.");
                     System.out.println("Type side radius: ");
                     double r = scanner.nextDouble();
-                    figure = new Circle(r);
-                    ((Circle) figure).print();                 //rzutuje figure na circle bo on ma printa
-                    System.out.println("Type prisms height: ");
-                    prismHeight = scanner.nextDouble();
-                    prism = new Prism(figure, prismHeight);
-                    prism.print();
+                    try {
+                        figure = new Circle(r);
+                        ((Circle) figure).print();                 //rzutuje figure na circle bo on ma printa
+                        System.out.println("Type prisms height: ");
+                        prismHeight = scanner.nextDouble();
+                        prism = new Prism(figure, prismHeight);
+                        prism.print();
+                    } catch (Exception exc) {
+                        System.out.println(exc.getMessage());
+                    }
                     break;
                 case 4:
                     System.out.println("Exit program");

@@ -4,7 +4,7 @@ class Square extends Figure implements Printable {
     //wyjatek informuje o bledach np dzielenie przez 0, tu bedzie przypadek niepoprawnego argumentu konstruktora
     private double b;
 
-    Square(double bok){    //rzuca wyjatek o tym niepoprawnym arg czyt wyzej!!!!
+    Square(double bok) throws Exception {    //rzuca wyjatek o tym niepoprawnym arg czyt wyzej!!!!
         if(bok <= 0 ){
             throw new IllegalArgumentException("Wrong value!");
         }

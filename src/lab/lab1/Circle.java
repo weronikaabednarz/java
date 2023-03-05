@@ -5,7 +5,7 @@ class Circle extends Figure implements Printable {
     private double r;
     private double pi = 3.14;
 
-    Circle(double r) {
+    Circle(double r) throws Exception{
         if (r <= 0) {
             throw new IllegalArgumentException("Wrong value!");
         }
