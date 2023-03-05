@@ -5,10 +5,9 @@ class Square extends Figure implements Printable {
     private double b;
 
     Square(double bok) throws Exception {    //rzuca wyjatek o tym niepoprawnym arg czyt wyzej!!!!
-        if(bok <= 0 ){
+        if (bok <= 0) {
             throw new IllegalArgumentException("Wrong value!");
-        }
-        else {
+        } else {
             this.b = bok;
         }
     }
