@@ -4,9 +4,10 @@ import java.util.Scanner;                                               //tu ten
 
 public class Main { //tworze maina w klasie XD
     private static Scanner scanner = new Scanner(System.in);                   //zaimportowalam alt+enter
-    public static void main(String[] args) throws Exception {
+
+    public static void main(String[] args) {
         boolean run = true;                 //zmienna logiczna true/false
-        while(run==true){                        //true - wykonuj sie bez konca, az ja cie zakoncze XD
+        while (run == true) {                        //true - wykonuj sie bez konca, az ja cie zakoncze XD
             System.out.println("_______________________________");
             System.out.println("Choose figure: ");
             System.out.println("1. square");
@@ -17,7 +18,7 @@ public class Main { //tworze maina w klasie XD
             Figure figure;
             Prism prism;
             double prismHeight;
-            switch(choosenFigure){
+            switch (choosenFigure) {
                 case 1:
                     System.out.println("You've choosen square.");
                     System.out.println("Type side length: ");
@@ -35,19 +36,23 @@ public class Main { //tworze maina w klasie XD
                     double a = scanner.nextDouble();
                     double d = scanner.nextDouble();
                     double c = scanner.nextDouble();
-                    figure = new Triangle(a, d, c);
-                    ((Triangle) figure). print();
-                    System.out.println("Type prisms height: ");
-                    prismHeight = scanner.nextDouble();
-                    prism = new Prism(figure, prismHeight);
-                    prism.print();
+                    try {                                        //w Try stworzyc trojkat, jak sie nie uda przez zle wymiary to poleci Exception ktory lapiemy w
+                        figure = new Triangle(a, d, c);         // catchu - nie wywali nam programu
+                        ((Triangle) figure).print();
+                        System.out.println("Type prisms height: ");
+                        prismHeight = scanner.nextDouble();
+                        prism = new Prism(figure, prismHeight);
+                        prism.print();
+                    } catch (Exception e) {                       //e - to nazwa exception
+                        System.out.println(e.getMessage());         //e.getmassage - wez komunikat exception
+                    }
                     break;
                 case 3:
                     System.out.println("You've choosen circle.");
                     System.out.println("Type side radius: ");
                     double r = scanner.nextDouble();
                     figure = new Circle(r);
-                    ((Circle) figure). print();                 //rzutuje figure na circle bo on ma printa
+                    ((Circle) figure).print();                 //rzutuje figure na circle bo on ma printa
                     System.out.println("Type prisms height: ");
                     prismHeight = scanner.nextDouble();
                     prism = new Prism(figure, prismHeight);

@@ -1,29 +1,27 @@
 package lab.lab1;
 
-import javax.sound.midi.Soundbank;
-import java.sql.SQLOutput;
-
 // implementuje interfejs Printable wiec musze zaimplementowac pod rodzaj figury jego metody
-public class Triangle extends Figure implements Printable {             //extends-dziedziczy
+class Triangle extends Figure implements Printable {             //extends-dziedziczy
     private double a;
     private double b;
     private double c;
     //definiuje pole, trojkat ma podstawe i wysokosc
 
-    Triangle(double a, double b, double c) throws Exception {                         //ustawiam pole, ta podstawa ma wartosc taka jaka mu podaje
-        if(a<b+c && b<a+c && c<a+b){
+    Triangle(double a, double b, double c) throws Exception {                 //ustawiam pole, ta podstawa ma wartosc taka jaka mu podaje
+        if (a < b + c && b < a + c && c < a + b) {
             this.a = a;
             this.b = b;
             this.c = c;
-        }
-        else{
+        } else {
             throw new Exception("Can not create triangle!!!");
         }
     }
-    @Override                                                           //override - nadpisuje
+
+    @Override
+        //override - nadpisuje
     double calculateArea() {
-        double p = calculatePerimeter()/2;
-        double area = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+        double p = calculatePerimeter() / 2;
+        double area = Math.sqrt(p * (p - a) * (p - b) * (p - c));
         return area;
     }
 
@@ -38,7 +36,7 @@ public class Triangle extends Figure implements Printable {             //extend
         System.out.println("Triangle");
         System.out.println("Side lengths: " + a + ", " + b + ", " + c);
         System.out.println("Area: " + calculateArea());
-        System.out.println("Perimeter: "+ calculatePerimeter());
+        System.out.println("Perimeter: " + calculatePerimeter());
     }
 
 }
