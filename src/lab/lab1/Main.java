@@ -7,7 +7,7 @@ public class Main { //tworze maina w klasie XD
 
     public static void main(String[] args) {
         boolean run = true;                 //zmienna logiczna true/false
-        while (run == true) {                        //true - wykonuj sie bez konca, az ja cie zakoncze XD
+        while (run == true) {                        //true - wykonuj sie bez konca, az ja cie zakoncze
             System.out.println("_______________________________");
             System.out.println("Choose figure: ");
             System.out.println("1. square");
